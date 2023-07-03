@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: right;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.section-wrapper {
+  display: flex;
+  justify-content: space-between; /* Aligner les sections horizontalement */
+  flex-wrap: wrap;
+}
+
+.section-box {
+  flex-basis: calc(33.33% - 40px); /* Définir la largeur de chaque section */
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+.section {
+  background-color: #f1f1f1;
+  border: 1px solid #000;
+  padding: 20px;
+  position: relative;
+}
+
+.section-title {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.section-title.primary1 {
+  background-color: #ff0000; /* Couleur primaire pour le titre de la première section */
+}
+
+.section-title.primary2 {
+  background-color: #00ff00; /* Couleur primaire pour le titre de la deuxième section */
+}
+
+.section-title.primary3 {
+  background-color: #0000ff; /* Couleur primaire pour le titre de la troisième section */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+}
+
+/*** large devices only ***/
+@media (min-width: 1200px) {
+    .section-box {
+    flex-basis: calc(33.33% - 40px); /* Les trois sections sur une ligne */
+  }
+}
+
+/*** Medium devices only ***/
+@media (max-width: 1180px) {
+  .section-box {
+    flex-basis: calc(50% - 40px); /* Les deux premières sections sur deux colonnes */
+  }
+  .section-box:nth-child(3) {
+    flex-basis: calc(100% - 40px); /* La troisième section occupe toute la ligne */
+  }
+}
+
+/*** Small devices only ***/
+@media (min-width:390px) and (max-width: 844px) {
+  .section-box {
+  flex-basis: calc(100% - 40px); /* Chaque section occupe toute la ligne */
+}
+}
